@@ -1,3 +1,10 @@
+Scope: this MIT grant is the one Amedeo de longis ("meo") applied to the
+original MKPortal code he authored and published at
+https://github.com/lupomeo/mkportal. It does not cover the later RusMKPortal
+contributions also present in this repository, nor the bundled third-party
+components (TinyMCE, FCKeditor, NicEdit, SimplePie, PJIRC), which carry their
+own licenses. See PROVENANCE.md.
+
 MIT License
 
 Copyright (c) 2023 meo
