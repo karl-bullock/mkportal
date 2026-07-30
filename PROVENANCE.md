@@ -31,8 +31,9 @@ forum download section, which archived actual file bodies:
     sha256  6a5a3b81a6bf6342fd5dcb2bae233da1d166f249c88a717c7ccaef2501d52ed2
     size    8,161,467 bytes · 3,387 entries · zip verified intact
 
-Committed unmodified apart from this file. Original package layout is
-preserved: `doc/`, `license.txt`, `readme.htm`, `upload/`.
+The code under `upload/` and the documentation under `doc/` are committed
+unmodified. Three root files differ from the original package — see
+"Deliberate changes to the package root" below.
 
 ## What changed since M1.x (the `OG` branch)
 
@@ -60,6 +61,43 @@ Visually, the `default` template roughly doubles: 105 → 203 images, CSS
 control panels, and `mkp.ext.ajax.js`. A third bundled skin, `rusmkportal`,
 ships alongside `default` and `Forum`. The 22-icon `atb_*` toolbar strip is
 unchanged, so core navigation still looks familiar.
+
+## Deliberate changes to the package root
+
+Everything under `doc/` and `upload/` is byte-for-byte as distributed. Three
+root files were changed on purpose:
+
+| Original | Now | Why |
+| -------- | --- | --- |
+| `readme.htm` | `README.md` | Converted to Markdown so it renders on GitHub. |
+| `license.txt` | `LICENSE` | Replaced — see below. |
+| — | `PROVENANCE.md` | This file. |
+
+`readme.htm` and `license.txt` remain in git history and in the original
+package archived at `~/mkportal-archive/MKPortal_R1.0.2_rusmkportal.zip`.
+
+### The license replacement
+
+The package shipped a 2008 proprietary MKPortal license which permitted free
+commercial and non-commercial use but **forbade redistribution**, forbade
+distributing modified copies, and required the MKPortal copyright notice to
+stay at the bottom of every page.
+
+That text has been replaced with the **MIT License** that Amedeo de longis
+("meo", the original author) applied when he published MKPortal to
+<https://github.com/lupomeo/mkportal> in February 2023. It is copied verbatim,
+carrying his `Copyright (c) 2023 meo` line. The reasoning: as the copyright
+holder, his 2023 relicensing is the most recent statement of terms for his own
+work, and it supersedes the 2008 text.
+
+Two caveats worth knowing, neither of which is resolved by this change:
+
+- Meo's MIT grant covers **the code he published**, which is the M1.x tree now
+  on the `OG` branch. R1.0.2 contains substantial later work by the RusMKPortal
+  team and other contributors who are not party to that grant.
+- Bundled third-party components keep their own licenses regardless — TinyMCE,
+  FCKeditor, NicEdit, SimplePie and the PJIRC applet each carry terms in their
+  own directories. The 2008 text called this out explicitly and it remains true.
 
 ## Known gaps
 
