@@ -1,0 +1,1 @@
+$contents = $plugins->run_hooks("pre_output_page", $contents);

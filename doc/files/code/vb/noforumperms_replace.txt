@@ -1,0 +1,3 @@
+// check permission to view forum
+//if (!($vbulletin->userinfo['permissions']['forumpermissions'] & $vbulletin->bf_ugp_forumpermissions['canview']))  //MKPortal exclude
+if (!($vbulletin->userinfo['permissions']['forumpermissions'] & $vbulletin->bf_ugp_forumpermissions['canview']) & !defined('IN_MKP')) //MKPortal edit

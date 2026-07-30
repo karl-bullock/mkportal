@@ -1,0 +1,4 @@
+		if ( $this->ipsclass->vars['ipb_img_url'] )
+		{
+			$this->ipsclass->skin['_wrapper'] = preg_replace( "#img\s+?src=([\"'])style_(images|avatars|emoticons)(.+?)[\"'](.+?)?".">#is", "img src=\\1".$this->ipsclass->vars['ipb_img_url']."style_\\2\\3\\1\\4>", $this->ipsclass->skin['_wrapper'] );
+		}

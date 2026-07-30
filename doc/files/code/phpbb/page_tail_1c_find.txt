@@ -1,0 +1,16 @@
+$db->sql_close();
+
+//added from mkportal
+global $Checkmkout, $ForumOut;
+define ( 'IN_MKP', 1 );
+$MK_PATH = "../";
+require $MK_PATH."mkportal/conf_mk.php";
+if($FORUM_VIEW == 1 && !$Checkmkout) {
+require_once $MK_PATH."mkportal/include/boardmod/php_out.php";
+mkportal_board_out();
+}
+if($FORUM_VIEW == 1 && $Checkmkout) {
+echo $ForumOut;
+}
+//end added
+

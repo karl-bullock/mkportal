@@ -1,0 +1,3 @@
+// check that board is active - if not admin, then display error
+//if (!$vbulletin->options['bbactive'] AND THIS_SCRIPT != 'login')
+if (!$vbulletin->options['bbactive'] AND THIS_SCRIPT != 'login' AND !defined('IN_MKP'))

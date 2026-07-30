@@ -1,0 +1,24 @@
+// modificato da mkportal
+global $ForumOut, $Checkmkout, $gen_simple_header;
+
+if ($handle == "smiliesbody" || $handle == "reviewbody" || $_GET['mode'] == "searchuser" || $gen_simple_header) {
+$Checkmkout = 1;
+}
+$MK_PATH = "./";
+if (defined('IN_ADMIN')) {
+$MK_PATH = "../";
+}
+require $MK_PATH."../mkportal/conf_mk.php";
+
+
+if ( !defined('IN_ADMIN') && $FORUM_VIEW == 1) {
+ob_start();
+eval($this->compiled_code[$handle]);
+$ForumOut .= ob_get_contents();
+      ob_end_clean();
+} else  {
+    eval($this->compiled_code[$handle]);
+
+}
+
+// fine modificato

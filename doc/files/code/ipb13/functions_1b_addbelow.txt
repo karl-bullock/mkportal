@@ -1,0 +1,5 @@
+//added from MKportal
+define ( 'IN_MKP', 1 );
+require_once "../mkportal/include/IPB13/ipb13_out.php";
+$ibforums->skin['template'] = mkportal_board_out($ibforums->skin['template']);
+//end added

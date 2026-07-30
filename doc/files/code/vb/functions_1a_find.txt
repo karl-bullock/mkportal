@@ -1,0 +1,4 @@
+if (!is_demo_mode())
+{
+($hook = vBulletinHook::fetch_hook('global_complete')) ? eval($hook) : false;
+}

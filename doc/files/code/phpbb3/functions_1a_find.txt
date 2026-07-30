@@ -1,0 +1,7 @@
+	if ($config['gzip_compress'])
+	{
+		if (@extension_loaded('zlib') && !headers_sent())
+		{
+			ob_start('ob_gzhandler');
+		}
+	}

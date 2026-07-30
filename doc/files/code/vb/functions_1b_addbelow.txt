@@ -1,0 +1,5 @@
+//added from MKportal
+define ( 'IN_MKP', 1 );
+require_once "../mkportal/include/VB/vb_out.php";
+$output = mkportal_board_out($output);
+//end added

@@ -1,0 +1,6 @@
+	//case $vbulletin->options['forumhome'] . '.php':
+		//$userinfo['activity'] = 'index';
+	case $vbulletin->options['forumhome'] . '.php':
+        	if (!isset($ind)) {
+            		$userinfo['activity'] = 'index';
+        	}

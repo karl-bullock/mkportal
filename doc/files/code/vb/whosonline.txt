@@ -1,0 +1,2 @@
+	case $vbulletin->options['forumhome'] . '.php':
+		$userinfo['activity'] = 'index';

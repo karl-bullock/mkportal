@@ -1,0 +1,1 @@
+$template->pparse('overall_footer');

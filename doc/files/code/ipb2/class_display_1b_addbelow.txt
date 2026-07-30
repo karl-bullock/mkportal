@@ -1,0 +1,5 @@
+//added from MKportal
+define ( 'IN_MKP', 1 );
+$MK_PATH = "../";
+require $MK_PATH."mkportal/conf_mk.php";
+//end added

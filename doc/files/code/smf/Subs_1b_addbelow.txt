@@ -1,0 +1,7 @@
+//added from MKportal
+if ($header !== false && in_array('main', $context['template_layers'])) {
+define ( 'IN_MKP', 1 );
+require_once "../mkportal/include/SMF/smf_out.php";
+mkportal_board_out();
+}
+//end added

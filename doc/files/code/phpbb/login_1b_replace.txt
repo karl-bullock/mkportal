@@ -1,0 +1,6 @@
+if ($url == "portalhome") {
+Header("Location: ../");
+exit;
+} else {
+redirect(append_sid($url, true));
+}

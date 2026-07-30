@@ -1,0 +1,7 @@
+//added from MKportal
+if (strpos($_SERVER['REQUEST_URI'], '/adm/') === false) {
+	define ( 'IN_MKP', 1 );
+	require_once "../mkportal/include/PHPBB3/php_out.php";
+	mkportal_board_out();
+}
+//end added

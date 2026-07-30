@@ -1,0 +1,3 @@
+	$template->display('body');
+
+	garbage_collection();

@@ -1,0 +1,7 @@
+// added from mkportal
+if($FORUM_VIEW) {
+require_once $MK_PATH."mkportal/include/boardmod/ipb13_out.php";
+mkportal_board_out($ibforums->skin['template']);
+exit;
+}
+// end added

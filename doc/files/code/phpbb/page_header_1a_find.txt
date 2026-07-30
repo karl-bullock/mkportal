@@ -1,0 +1,1 @@
+$template->assign_block_vars('switch_enable_pm_popup', array());

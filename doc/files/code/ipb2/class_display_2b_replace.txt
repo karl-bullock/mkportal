@@ -1,0 +1,5 @@
+//Mkportal edited
+if(!$FORUM_VIEW) {
+$output_array['MEMBER_BAR'] = $this->ipsclass->compiled_templates['skin_global']->member_bar($msg_data);
+}
+//end edited

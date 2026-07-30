@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>MKPortal Installation</title>
+  <meta name="author" content="Don K. Colburn - Visible Soul Web Design (http://www.visiblesoul.net)" />
+  <meta name="generator" content="VIM 6.3" />
+  <meta name="copyright" content="Template Copyright (c) 2005 visiblesoul.net. All other content Copyright (c) 2005-2007 mkportal.it" />
+  <link rel="stylesheet" type="text/css" href="../files/mkstyle.css" />
+</head>
+<body>
+
+<div id="wrapper">
+  
+  <div id="header"></div>
+
+    <div id="main">
+
+<!-- Begin Navigation -->
+      <div id="navblock">
+
+
+	<p class="navtitle">Etapes:</p>
+	<ul class="nav">
+	  <li><a href="install.htm#step1">1. Pr&eacute;-requis</a></li>
+	  <li><a href="install.htm#step2">2. Sauvegarde BDD</a></li>
+	  <li><a href="install.htm#step3">3. Transfert</a></li>
+	  <li><a href="install.htm#step4">4. CHMOD</a></li>
+	  <li><a href="install.htm#step5">5. Installeur</a></li>
+	  <li><a href="install.htm#step6">6. S&eacute;curit&eacute;</a></li>
+	  <li><a href="install.htm#step7">7. Sp&eacute;cificit&eacute;s de Forum</a></li>
+	  <li><a href="install.htm#step8">8. Optionel</a></li>
+	</ul>
+
+	<p class="navtitle">Doc:</p>
+	<ul class="nav">
+	  <li><img src="../files/flag-fr.gif" align="top" alt="" /> <a href="install.htm">Installation</a></li>
+	  <li><img src="../files/flag-fr.gif" align="top" alt="" /> <a href="upgrade.htm">Mise &agrave; jour</a></li>
+	</ul>
+
+      </div>
+<!-- End Navigation -->
+
+<!-- Begin Content -->
+      <div id="content">
+
+<!-- ######### BEGIN TEXT ########################### -->
+<h1>Int&eacute;gration du forum &agrave; l'int&eacute;rieur de&nbsp;MKPortal - SMF</h1>
+
+
+<h2>ETAPE 1: Etablissez les Options de Configuration</h2>
+<p>Dans MKPortal "PC Portail &gt; Preferences &gt;&nbsp;Visualisation
+du forum &amp; Feel" mettez l'option set the "Visualisation du forum
+&agrave; l'int&eacute;rieur de&nbsp;MKPortal?"&agrave;&nbsp;"Oui".
+</p>
+
+
+<h2>ETAPE 2: Modification de fichier du Forum</h2>
+
+<p class="warning">Sauvegardez le fichier avant toute modification.</p>
+
+<p class="pbold">Editez le fichier&nbsp;Sources/Subs.php&nbsp; du forum.</p>
+
+<p>TROUVEZ:</p>
+	
+	<iframe src="../files/code/smf/Subs_1a_find.txt" frameborder="0" marginheight="0" marginwidth="0" height="40">Your browser does not support frames or is currently configured not to display frames. However, you may visit <a href="../files/code/smf/Subs_1a_find.txt">the related document.</a></iframe>
+	
+	
+<p>AJOUTEZ APRES:</p>
+
+	<iframe src="../files/code/smf/Subs_1b_addbelow.txt" frameborder="0" marginheight="0" marginwidth="0">Your browser does not support frames or is currently configured not to display frames. However, you may visit <a href="../files/code/smf/Subs_1b_addbelow.txt">the related document.</a></iframe>
+
+	
+	
+<!-- ######### END TEXT ########################### -->
+
+
+      </div>
+<!-- End content -->
+    
+<!-- Begin footer -->
+      <div id="footer">      
+    
+	<div id="footleft">template by <a href="http://www.visiblesoul.net/">visiblesoul</a></div>
+	
+	<div id="footcenter">
+		<a style="margin-right: 20px" href="../en/install.htm"><img src="../files/flag-uk.gif" alt="" /></a>
+		<a style="margin-right: 20px"  class="langflag" href="../it/install.htm"><img src="../files/flag-it.gif" alt="" /></a>
+		<a class="langflag" href="../fr/install.htm"><img src="../files/flag-fr.gif" alt="" /></a>
+	</div>
+
+	<div id="footright">All content &copy;2005-2008 <a href="http://www.mkportal.it/">mkportal.it</a></div>           
+      </div>
+<!-- End footer -->    
+   
+    </div>  
+  
+  <div id="footimg"></div> 
+    
+</div> 
+
+</body>
+</html>

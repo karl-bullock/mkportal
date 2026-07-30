@@ -1,0 +1,261 @@
+/* MKPortal Install Docs by visiblesoul */
+
+body {
+	background-color: #DFE6EF;
+	margin:10px;
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:12px; 
+	color:#000000;
+	text-align: center;
+}
+
+
+img {
+	border:none;
+}
+
+/*=============================
+M
+K  div styles
+P
+=============================*/
+#wrapper {
+	border: 0; 
+	width: 760px; 
+	padding: 0px; 
+	margin: 0px; 
+	text-align: left; 
+	margin: auto;
+}
+
+#header {
+	border: 0;
+	background: #ffffff url(../files/mkheader.jpg) no-repeat; 
+	width: 760px; 
+	height: 162px;
+}
+
+#main {
+	border: 0;
+	background: #ffffff url(../files/mktile.jpg) repeat-y; 
+	padding-top: 10px; 
+	padding-left: 20px; 
+	margin-left: 1px;
+}
+
+#navblock {
+	border-right: #303E53 solid 1px; 
+	width: 160px; 
+	padding: 0px; 
+	margin: 0px; 
+	float: left;
+}
+
+#content {
+	border: #000000 solid 0px; 
+	width: 540px; 
+	padding-right: 25px;
+	padding-left: 0px;
+	margin: 0px; 
+	float: right;
+}
+
+/* divider border */
+.divborder {
+	border-top: #303E53 dashed 1px; 
+	/*border-bottom: #000000 dashed 1px;*/
+}
+
+/* divider between code instructions*/
+.codediv {
+	border-top: #303E53 dashed 1px;
+	width: 50%; 
+	margin-top: 50px;
+}
+
+#footer {
+	width: 100%;
+	/*padding: 20px;*/
+	padding-top: 50px;
+	padding-bottom: 20px;
+	text-align: center; 
+	clear: both;	
+	font-family: arial,verdana,helvetica,sans-serif;
+	font-size:11px; 
+	color:#9D060F;
+}
+
+#footleft {
+	width: 35%; 
+	float: left; 
+	text-align: left;
+}
+
+#footcenter {
+	width: 25%; 
+	float: left; 
+	text-align: center;
+}
+
+#footright {
+	width: 35%; 
+	float: left; 
+	text-align: right;
+}
+
+#footimg {
+	background: #ffffff url(../files/mkfooter.jpg) no-repeat; 
+	width: 760px; 
+	height: 30px;
+}
+
+/*=============================
+M
+K  hyperlink styles
+P
+=============================*/
+/* global links */
+a:link, 
+a:visited {
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	color: #496c9f;	
+	text-decoration: underline;	
+}
+
+a:hover {
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	color: #496c9f;	
+	text-decoration: none;
+}
+
+a:active {
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	color: #496c9f;	
+	text-decoration: none; 	
+}
+
+/* bold navbar, block, module links */
+.nav a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+	color: #7892B5; 
+	font-weight: bold;
+	text-decoration: none
+}
+
+.nav a:visited {	
+	font-size: 12px; 
+	color: #7892B5; 
+	font-weight: bold;
+	text-decoration: none
+}
+
+.nav a:hover {
+	font-size: 12px; 
+	color: #ffffff; 
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #7892B5;
+}
+
+.navtitle {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:14px; 
+	color:#9D060F; 
+	text-align:left; 
+	font-weight:bold;	
+}
+
+.nav ul, .nav li {
+	list-style: none;
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:12px; 
+	/*color:#000000;*/ 
+	/*text-align: justify;*/ 
+	padding-bottom:5px;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -3em;	
+}
+
+h1 {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:16px; 
+	color:#9D060F; 
+	text-align:center;
+	font-weight:bold;
+}
+
+h2 {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:14px; 
+	color:#496c9f; 
+	text-align:left;
+	font-weight:bold;
+	margin-top: 2.5em;
+	border-bottom: 1px solid #496c9f;
+	background-color: #E7EBF2;
+	padding: 2px
+}
+
+h3 {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:12px;
+	text-align:left;
+	font-weight:bold;
+}
+
+ul.nobull {
+	list-style: none;
+	font-family:verdana,arial,helvetica,sans-serif;
+	padding-bottom:5px;	
+}
+
+.pbold {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:12px; 
+	color:#496c9f; 
+	text-align: justify;
+	font-weight:bold;
+} 
+
+p, blockquote {
+	font-family:verdana,arial,helvetica,sans-serif; 
+	font-size:12px; 
+	color:#000000; 
+	text-align: left;
+}
+
+/*
+textarea {
+	font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color: #F1F2F7;
+	border: 1px solid #000000;
+	width: 100%;
+}
+	
+.codetable {
+	background-color:#ffffff; 
+	border:1px solid black;
+}
+*/
+
+iframe {
+	font-family: verdana, arial, helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #000000; 
+	background-color: #F1F2F7; 
+	border: 2px solid #496c9f;	
+	width: 100%;
+}
+
+.warning {
+	color: #9D060F;
+	font-weight: bold;
+}
+
+li {
+	padding-bottom: 5px;
+}

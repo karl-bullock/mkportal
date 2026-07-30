@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Installazione MKPortal</title>
+  <meta name="author" content="Don K. Colburn - Visible Soul Web Design (http://www.visiblesoul.net)" />
+  <meta name="generator" content="VIM 6.3" />
+  <meta name="copyright" content="Template Copyright (c) 2005 visiblesoul.net. All other content Copyright (c) 2005-2007 mkportal.it" />
+  <link rel="stylesheet" type="text/css" href="../files/mkstyle.css" />
+</head>
+<body>
+
+<div id="wrapper">
+  
+  <div id="header"></div>
+
+    <div id="main">
+
+<!-- Begin Navigation -->
+      <div id="navblock">
+
+
+	<p class="navtitle">Steps:</p>
+	<ul class="nav">
+	  <li><a href="#step1">1. Requisiti</a></li>
+	  <li><a href="#step2">2. Backup</a></li>
+	  <li><a href="#step3">3. Upload</a></li>
+	  <li><a href="#step4">4. CHMOD</a></li>
+	  <li><a href="#step5">5. Installazione</a></li>
+	  <li><a href="#step6">6. Sicurezza</a></li>
+	  <li><a href="#step7">7. Specifiche Board</a></li>
+	  <li><a href="#step8">8. Opzionale</a></li>
+	</ul>
+
+	<p class="navtitle">Doc:</p>
+	<ul class="nav">
+	  <li><img src="../files/flag-it.gif" align="top" alt="" /> <a href="install.htm">Installazione</a></li>
+	  <li><img src="../files/flag-it.gif" align="top" alt="" /> <a href="upgrade.htm">Upgrade</a></li>
+	</ul>
+
+      </div>
+<!-- End Navigation -->
+
+<!-- Begin Content -->
+      <div id="content">
+
+<!-- ######### BEGIN TEXT ########################### -->
+<h1>Installazione MKPortal C1.2</h1>
+
+<a name="step1"></a>
+<h2>STEP 1: Controlla i requisiti &amp; Board compatibili</h2>
+
+
+
+<h3>Requisiti minimi:</h3>
+
+<ul>
+	<li><strong>Piattaforme:</strong> Linux, Windows, FreeBSD, OS X, Sun</li>
+	<li><strong>Spazio:</strong> L'installazione di default di MKPortal richiede approssimamente 5 MB di spazio nel webserver. Ci&ograve; non include i file del forum , skin aggiuntive e altri add-ons, oppure i file uploadati dagli utenti nei moduli Gallery, Download, Blog o TopSite. Probabilmente avrai bisogno di almeno 8-10 mb di spazio per una community di moderate dimensioni che usa tutti questi moduli.</li>
+	<li><strong>PHP:</strong> PHP 4.1.0 o superiore. Nota: Verificare anche i requisiti minimi della board che possono essere differenti dai requisiti minimi di MKPortal.</li>
+	<li><strong>MySQL:</strong> 3.23.4 o superiore (4.1 con phpBB3). Nota: Verificare anche i requisiti minimi della board che possono essere differenti dai requisiti minimi di MKPortal.</li>
+	<li><strong>Database:</strong> 1 database MySQL con almeno 500 KB di spazio per le tabelle del portale. L'installazione di default di MKPortal condivide il database del forum e richiede approssimatamente 280 KB di spazio nel database oltre allo spazio usato dalle tabelle del database del forum. Ovviamente avrai bisogno di molto pi&ugrave; spazio nel database per una Community attiva.</li>
+	<li><strong>GD</strong> Graphics Library versione 1.0 o superiore. Le GD library sono necessarie per la funzione watermark della Gallery e per la creazione delle anteprime.</li>
+</ul>
+
+<div style="border: 1px solid #990000; padding: 5px">
+<p><span class="warning">Nota importante per gli utenti di phpBB3:</span><strong> L'Integrazione di phpBB3 con MKPortal necessita di ulteriori requisiti :</strong></p>
+
+<ul>
+	<li><strong>MySQL:</strong> 4.1 o superiore. La collocazione delle tabelle del database deve essere UTF-8.</li>
+	<li><strong>File di lingua:</strong> I file di lingua di MKPortal devono essere in UTF-8.</li>
+</ul>
+</div>
+
+<h3>Board Compatibili e Versioni:</h3> 
+
+<p><span class="warning">La vostra Board deve essere già installata e funzionare correttamente, prima di installare MKPortal.</span> 
+L'unica eccezzione è in caso decidiate di usare l'integrazione con la Board AEF, la sua installazione avverrà assieme a quella di MKPortal.</p>
+
+<p>Questa versione di MKPortal è compatibile con le seguenti board:</p>
+
+<ul>
+	<li>SMF 1.1.x</li>
+	<li>IPB 1.3.x</li>
+	<li>IPB 2.3.x</li>
+	<li>vB 3.7.x</li>
+	<li>phpBB 2.0.x</li>
+	<li>phpBB 3.x</li>
+	<li>MyBB 1.2.x</li>
+	<li>AEF 1.0.6</li>
+</ul>
+
+<a name="step2"></a>
+<h2>STEP 2: Backup Database</h2>
+
+<p class="warning">Prima di installare MKPortal è molto importante fare un backup del 
+database della propria Board.</p>
+
+
+
+<a name="step3"></a>
+<h2>STEP 3: Upload dei File di MKPortal &amp; delle Cartelle</h2>
+
+<p>Il pacchetto di installazione (.zip) contiene la cartella &quot;upload&quot;. 
+Trasferire il contenuto della cartella &quot;upload&quot; nel vostro spazio 
+<span class="warning">seguendo la struttura requisita per il corretto funzionamento</span>. 
+Se la vostra Board è nella root principale del vostro sito dovrete spostare il tutto in una sua cartella
+e ovviamente modificare i suoi principali file di configurazione per la nuova posizione nel vostro spazio.</p>
+
+<p>Nota: Se userai AEF non avrai bisogno di caricare un altra board e volendo potrai rinominare la sua cartella
+ come vorrai, l'importante che userai il nome corretto durante l'installazione di MKPortal.</p>
+
+<ul class="nobull">
+	<li><strong>/index.php</strong> (File index.php principale di MKPortal)</li>
+	<li><strong>/mkportal</strong> (La cartella di &quot;mkportal&quot; e il suo contenuto. Non rinominate!)</li>
+	<li><strong>/forum</strong> (Cartella contente la vostra Board. Il nome è indifferente)</li>
+</ul>
+
+<p><img src="../files/ftpscreen.png" alt="MKPortal directory structure screenshot" title="MKPortal directory structure screenshot" /></p>	
+
+<p>Dopo aver caricato i files di &amp; le cartelle la struttura sarà simile a questa. </p>
+
+<ul class="nobull">
+	<li><strong>http://www.example.com/index.php</strong> (index.php di MKPortal)</li>
+	<li><strong>http://www.example.com/mkportal</strong></li>
+	<li><strong>http://www.example.com/forum</strong></li>
+</ul>
+
+<p>In caso caricaste MKPortal in una eventuale sottocartella, sarà invece così strutturata. 
+Come potete notare la struttura rimane la stessa della precedente.
+
+<ul class="nobull">
+	<li><strong>http://www.example.com/subdirectory/index.php</strong> (index.php di MKPortal)</li>
+	<li><strong>http://www.example.com/subdirectory/mkportal</strong></li>
+	<li><strong>http://www.example.com/subdirectory/forum</strong></li>
+</ul>
+
+<p>MKPortal può essere usato anche con i sottodomini, mantenendo sempre la stessa struttura.</p>
+
+<ul class="nobull">
+	<li><strong>http://subdomain.example.com/index.php</strong> (index.php di MKPortal)</li>
+	<li><strong>http://subdomain.example.com/mkportal</strong></li>
+	<li><strong>http://subdomain.example.com/forum</strong></li>
+</ul>
+
+<p class="warning">MKPortal non funzionerà se non seguirete questa struttura!</p> 
+
+
+<a name="step4"></a>
+<h2>STEP 3: CHMOD dei File di MKPortal &amp; delle Cartelle</h2>
+
+<p>Dovrete impostare i permessi ai seguenti files (0666) e cartelle (0777) incluso i contenuti:</p>
+
+<ul class="nobull">
+<li>mkportal/conf_mk.php</li>
+<li>mkportal/blog</li>
+<li>mkportal/blog/images</li>
+<li>mkportal/blog/images/tmp</li>
+<li>mkportal/cache</li>
+<li>mkportal/lang</li>
+<li>mkportal/lang/English</li>
+<li>mkportal/lang/Francais</li>
+<li>mkportal/lang/Italiano</li>
+<li>mkportal/modules/downloads/file</li>
+<li>mkportal/modules/gallery/album</li>
+<li>mkportal/modules/gallery/album/tmp</li>
+<li>mkportal/modules/reviews/images</li>
+<li>mkportal/modules/reviews/images/tmp</li>
+<li>mkportal/templates</li>
+<li>mkportal/templates/default</li>
+<li>mkportal/templates/Forum</li>
+</ul>
+
+<a name="step5"></a>
+<h2>STEP 5: Installazione di MKPortal</h2>
+
+<p>Avviate lo script di installazione digitando<strong>http://www.example.com/mkportal/mk_install.php</strong>. 
+L'installazione guidata vi aiuterà a creare le tabelle nel database per il completo funzionamento di MKPortal.</p>
+<p>Nota: come detto in precedenza, in caso usate AEF partirà anche la sua installazione, in caso invece usiate una board esterna dovrete 
+installarla precedentemente.</p>
+
+<a name="step6"></a>
+<h2>STEP 6: Eliminazione dei i file di Installazione e Upgrade di MKPortal</h2>
+<p class="warning">Molto importante per la vostra sicurezza!
+Cancellare Immediatamente il file mk_install.php e la cartella mkportal/upgrades del vostro spazio dopo la completa installazione.
+In caso vi dimentichiate un messaggio nell'amministrazione ve lo ricorderà fino alla loro eliminazione.</p>
+
+<p class="warning">Solo per gli utenti AEF: Cancellare immediatamente le cartelle aeforum/setup e aeforum/upgrade dal server per motivi di sicurezza.</p>
+
+
+<a name="step7"></a>
+<h2>STEP 7: Istruzioni specifiche per alcune Board (SMF &amp; phpBB2)</h2>
+
+
+<h3><img src="../files/smf.gif" alt="" /> Solo SMF:</h3>
+<p>Andando nella vostra board SMF <strong>Amministrazione &gt; Configurazioni &gt; Parametri del Server &gt; Configurazione delle Opzioni</strong> 
+e togliete il segno di spunta su "Abilita il salvataggio locale dei cookies". Se voi non lo disabilitate <em>potreste</em> avere problemi di login dal Portale.</p>
+
+<div class="divborder"></div>
+<h3><img src="../files/phpbb.gif" alt="" /> Solo phpBB2</h3>
+
+<p>Modificate il seguente file di phpBB2: login.php</p>
+
+	
+<p>TROVATE</p>		
+
+	
+	<iframe src="../files/code/phpbb/login_1a_find.txt" frameborder="0" marginheight="0" marginwidth="0" height="40">Your browser does not support frames or is currently configured not to display frames. However, you may visit <a href="../files/code/phpbb/login_1a_find.txt">the related document.</a></iframe>
+	
+	
+	<p>SOSTITUITE CON:</p>
+
+	<iframe src="../files/code/phpbb/login_1b_replace.txt" frameborder="0" marginheight="0" marginwidth="0" height="100">Your browser does not support frames or is currently configured not to display frames. However, you may visit <a href="../files/code/phpbb/login_1b_replace.txt">the related document.</a></iframe>
+
+	<span class="warning">IMPORTANTE! Questa stringa è presente 3 volte nel file login.php. 
+Dovete sostituirla in tutti e 3 i punti!</span>
+
+	<p>&nbsp;</p>
+	<div class="divborder"></div>
+
+	<p class="pbold"> Installazione Completata. Grazie per aver scelto MKPortal e buon Divertimento!</p>
+
+
+	
+<a name="step8"></a>
+<h2>STEP 8 [Opzionale] : Modifica dei File della Board</h2>
+
+
+<p>Se volete visualizzare la Board all'interno di MKPortal, selezionate la vostra qua sotto per le specifiche istruzioni.</p>
+<p>Potrebbe anche essere necessario modificare i file della board se vuoi mettere il forum offline mantenendoil portale online.</p>
+
+<div style="width: 45%; float: left">
+	<ul class="nav">
+	  <li><img src="../files/smf.gif" alt="" /> <a  href="smf.htm">SMF</a></li>
+	  <li><img src="../files/ipb.gif" alt="" /> <a href="ipb13.htm">IPB 1.3</a></li>
+	  <li><img src="../files/ipb2.gif" alt="" /> <a href="ipb2.htm">IPB 2</a></li>
+	  <li><img src="../files/aef.gif" alt="" /> <a href="aef.htm">AEF</a></li>
+		</ul>
+</div>	  
+		
+<div style="width: 45%; float: left">
+	<ul class="nav">
+	  <li><img src="../files/vb.gif" alt="" /> <a href="vb.htm">vBulletin</a></li>
+	  <li><img src="../files/phpbb.gif" alt="" /> <a href="phpbb.htm">phpBB2</a></li>
+	  <li><img src="../files/phpbb3.gif" alt="" /> <a href="phpbb3.htm">phpBB3</a></li>
+	  <li><img src="../files/mybb.gif" alt="" /> <a href="mybb.htm">myBB</a></li>
+  </ul>
+</div>
+	
+	
+<!-- ######### END TEXT ########################### -->
+
+
+      </div>
+<!-- End content -->
+    
+<!-- Begin footer -->
+      <div id="footer">      
+    
+	<div id="footleft">template by <a href="http://www.visiblesoul.net/">visiblesoul</a></div>
+	<div id="footcenter">
+		<a style="margin-right: 20px" href="../en/install.htm"><img src="../files/flag-uk.gif" alt="" /></a>
+		<a style="margin-right: 20px"  class="langflag" href="../it/install.htm"><img src="../files/flag-it.gif" alt="" /></a>
+		<a class="langflag" href="../fr/install.htm"><img src="../files/flag-fr.gif" alt="" /></a>
+	</div>
+
+	<div id="footright">All content &copy;2005-2008 <a href="http://www.mkportal.it/">mkportal.it</a></div>           
+      </div>
+<!-- End footer -->    
+   
+    </div>  
+  
+  <div id="footimg"></div> 
+    
+</div> 
+
+</body>
+</html>

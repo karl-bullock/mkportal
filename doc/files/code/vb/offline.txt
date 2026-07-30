@@ -1,0 +1,2 @@
+// check that board is active - if not admin, then display error
+if (!$vbulletin->options['bbactive'] AND THIS_SCRIPT != 'login')

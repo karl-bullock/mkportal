@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Aggiornamento MKPortal</title>
+  <meta name="author" content="Don K. Colburn - Visible Soul Web Design (http://www.visiblesoul.net)" />
+  <meta name="generator" content="VIM 6.3" />
+  <meta name="copyright" content="Template Copyright (c) 2005 visiblesoul.net. All other content Copyright (c) 2005-2007 mkportal.it" />
+  <link rel="stylesheet" type="text/css" href="../files/mkstyle.css" />
+</head>
+<body>
+
+<div id="wrapper">
+  
+  <div id="header"></div>
+
+    <div id="main">
+
+<!-- Begin Navigation -->
+      <div id="navblock">
+
+
+	<p class="navtitle">Steps:</p>
+	<ul class="nav">
+	  <li><a href="#step1">1. Requisiti</a></li>
+	  <li><a href="#step2">2. Backup</a></li>
+	  <li><a href="#step3">3. Eliminazione</a></li>
+	  <li><a href="#step4">4. Upload</a></li>
+	  <li><a href="#step5">5. CHMOD</a></li>
+	  <li><a href="#step6">6. Aggiornamento</a></li>
+	  <li><a href="#step7">7. Sicurezza</a></li>
+	  <li><a href="#step8">8. Opzionale</a></li>
+	</ul>
+
+	<p class="navtitle">Doc:</p>
+	<ul class="nav">
+	  <li><img src="../files/flag-it.gif" align="top" alt="" /> <a href="install.htm">Installazione</a></li>
+	  <li><img src="../files/flag-it.gif" align="top" alt="" /> <a href="upgrade.htm">Aggiornamento</a></li>
+	</ul>
+
+      </div>
+<!-- End Navigation -->
+
+<!-- Begin Content -->
+      <div id="content">
+
+<!-- ######### BEGIN TEXT ########################### -->
+<h1>Aggiornamento a MKPortal C1.2</h1>
+
+<a name="step1"></a>
+<h2>STEP 1: Controlla i requisiti, Versione di MKP &amp; Board compatibili</h2>
+
+<h3>Requisiti minimi:</h3>
+
+<ul>
+	<li><strong>Piattaforme:</strong> Linux, Windows, FreeBSD, OS X, Sun</li>
+	<li><strong>Spazio:</strong> L'installazione di default di MKPortal richiede approssimamente 5 MB di spazio nel webserver. Ci&ograve; non include i file del forum , skin aggiuntive e altri add-ons, oppure i file uploadati dagli utenti nei moduli Gallery, Download, Blog o TopSite. Probabilmente avrai bisogno di almeno 8-10 mb di spazio per una community di moderate dimensioni che usa tutti questi moduli.</li>
+	<li><strong>PHP:</strong> PHP 4.1.0 o superiore. Nota: Verificare anche i requisiti minimi della board che possono essere differenti dai requisiti minimi di MKPortal.</li>
+	<li><strong>MySQL:</strong> 3.23.4 o superiore (4.1 con phpBB3). Nota: Verificare anche i requisiti minimi della board che possono essere differenti dai requisiti minimi di MKPortal.</li>
+	<li><strong>Database:</strong> 1 database MySQL con almeno 500 KB di spazio per le tabelle del portale. L'installazione di default di MKPortal condivide il database del forum e richiede approssimatamente 280 KB di spazio nel database oltre allo spazio usato dalle tabelle del database del forum. Ovviamente avrai bisogno di molto pi&ugrave; spazio nel database per una Community attiva.</li>
+	<li><strong>GD</strong> Graphics Library versione 1.0 o superiore. Le GD library sono necessarie per la funzione watermark della Gallery e per la creazione delle anteprime.</li>
+</ul>
+
+<div style="border: 1px solid #990000; padding: 5px">
+<p><span class="warning">Nota importante per gli utenti di phpBB3:</span><strong> L'Integrazione di phpBB3 con MKPortal necessita di ulteriori requisiti :</strong></p>
+
+<ul>
+	<li><strong>MySQL:</strong> 4.1 o superiore. La collocazione delle tabelle del database deve essere UTF-8.</li>
+	<li><strong>File di lingua:</strong> I file di lingua di MKPortal devono essere in UTF-8.</li>
+</ul>
+</div>
+
+
+<h3>Versioni di MKPortal Compatibili:</h3>
+
+<ul>
+	<li><span class="warning">MKPortal M1.0 o superiore &egrave; richiesto per questo aggiornamento.</span></li>
+	<li>La cartella "upgrades"  include 2 script di aggiornamento aggiuntivi per incrementare l'aggiornamento da M08 a M09 o da M09 a M1.0. Questi devono essere lanciati ( in ordine di versione ) prima di lanciare "upgrades/index.php" se stai aggiornando da M08 o M09.</li>
+	<li>Se hai bisogno di aggiornare una versione pi&ugrave; vecchia di M08 per favore visita il <a href="http://www.mkportal.it/support/">forum di supporto</a> per assistenza.</li>
+</ul>
+
+
+<h3>Board Compatibili:</h3> 
+
+<p>Questa versione di MKPortal è compatibile con le seguenti board:</p>
+
+<ul>
+	<li>SMF 1.1.x</li>
+	<li>IPB 1.3.x</li>
+	<li>IPB 2.3.x</li>
+	<li>vB 3.7.x</li>
+	<li>phpBB 2.0.x</li>
+	<li>phpBB 3.x</li>
+	<li>MyBB 1.2.x</li>
+	<li>AEF 1.0.6</li>
+</ul>
+
+<a name="step2"></a>
+<h2>STEP 2: Backup File &amp; Database</h2>
+
+<p class="warning">Prima di aggiornare è importante fare un backup dei file di MKPortal e del database (inclusa la vostra Board).</p>
+
+<a name="step3"></a>
+<h2>STEP 3: Cartelle &amp; File deprecati</h2>
+
+<p><span class="warning">&Egrave; importante per motivi di sicurezza cancellare file e cartelle inutilizzate.</span></p>
+
+<p><strong>M1.0 o versioni precedenti:</strong> Se stai aggiornando dalla M1.0 &egrave; importante eliminare la cartella "mkportal/include" prima di aggiornare i nuovi file. La struttura delle cartelle &egrave; cambata dopo M1.0</p>
+
+<p><strong>Tutte le versioni:</strong> Eliminare i seguenti file dal webserver se esistono. Questi file sono stati rinominati, eliminati o spostati.</p>
+		
+<ul>
+	<li>mkportal/include/pmpopup.php</li>
+	<li>mkportal/admin.php</li>
+	<li>mkportal/modules/blog/disclaimer.txt</li>
+</ul>
+
+<a name="step4"></a>
+<h2>STEP 4: Upload dei nuovi File di MKPortal &amp; Cartelle</h2>
+
+<p>Caricare i nuovi file di MKPortal contenuti in questo pacchetto nel tuo webserver sovrascrivendo tutti i vecchi file <span class="warning">ECCETTO i seguenti</span>:</p>
+		
+<ul>
+		<li><strong>mkportal/conf_mk.php</strong> (File di configurazione di MKPortal)</li>
+		<li><strong>lang/*/lang_blocktitle.php</strong> (Titoli personali dei blocchi per tutte le lingue)</li>
+		<li><strong>mkportal/modules/gallery/wt.png</strong> (Immagine Watermark utilizzata nella MKPGallery)</li>
+		<li><strong>aeforum/universal.php</strong> (File di configurazione di AEF, in caso utilizziate la board interna)</li>
+</ul>
+
+<p>Ovviamente se hai modificato il tuo template o altri file devi aggiungere le modifiche ai nuovi file.</p>
+
+<a name="step5"></a>
+<h2>STEP 5: CHMOD dei File di MKPortal &amp; delle Cartelle</h2>
+
+<p>Dovrete impostare i permessi ai seguenti files (0666) e cartelle (0777) incluso i contenuti:</p>
+
+<ul class="nobull">
+<li>mkportal/conf_mk.php</li>
+<li>mkportal/blog</li>
+<li>mkportal/blog/images</li>
+<li>mkportal/blog/images/tmp</li>
+<li>mkportal/cache</li>
+<li>mkportal/lang</li>
+<li>mkportal/lang/English</li>
+<li>mkportal/lang/Francais</li>
+<li>mkportal/lang/Italiano</li>
+<li>mkportal/modules/downloads/file</li>
+<li>mkportal/modules/gallery/album</li>
+<li>mkportal/modules/gallery/album/tmp</li>
+<li>mkportal/modules/reviews/images</li>
+<li>mkportal/modules/reviews/images/tmp</li>
+<li>mkportal/templates</li>
+<li>mkportal/templates/default</li>
+<li>mkportal/templates/Forum</li>
+</ul>
+
+<a name="step6"></a>
+<h2>STEP 6: Aggiornamento di MKPortal</h2>
+
+<p>Avviate lo script di aggiornamento digitando <strong>http://www.example.com/mkportal/upgrades/index.php</strong>. L'aggiornamento guidato vi aiuter&agrave; ad aggiornare le tabelle nel database di MKPortal.</p>
+
+<a name="step7"></a>
+<h2>STEP 7: Eliminazione dei i file di Installazione e Upgrade di MKPortal</h2>
+<p class="warning">Molto importante per la vostra sicurezza! Cancellare Immediatamente il file mk_install.php e la cartella mkportal/upgrades del vostro spazio dopo la completa installazione. In caso vi dimentichiate un messaggio nell'amministrazione ve lo ricorderà fino alla loro eliminazione.</p>
+
+<p class="warning">Solo per gli utenti AEF: Cancellare immediatamente le cartelle aeforum/setup e aeforum/upgrade dal server per motivi di sicurezza.</p>
+
+	<div class="divborder"></div>
+
+	<p class="pbold"> Aggiornamento Completato. Grazie per aver scelto MKPortal e buon Divertimento!</p>
+	
+<a name="step8"></a>
+<h2>STEP 8 [Opzionale] : Modifica dei File della Board</h2>
+
+
+<p>Potrebbe essere necessario ri-modificare i file del forum. &Egrave; consigliabile iniziare dai file di default e aggiungere le modifiche ai file della board.</p>
+
+<p>Se volete visualizzare la Board all'interno di MKPortal, selezionate la vostra qua sotto per le specifiche istruzioni.</p>
+<p>Potrebbe anche essere necessario modificare i file della board se vuoi mettere il forum offline mantenendoil portale online.</p>
+
+<div style="width: 45%; float: left">
+	<ul class="nav">
+	  <li><img src="../files/smf.gif" alt="" /> <a href="smf.htm">SMF</a></li>
+	  <li><img src="../files/ipb.gif" alt="" /> <a href="ipb13.htm">IPB 1.3</a></li>
+	  <li><img src="../files/ipb2.gif" alt="" /> <a href="ipb2.htm">IPB 2</a></li>
+	  <li><img src="../files/aef.gif" alt="" /> <a href="aef.htm">AEF</a></li>
+		</ul>
+</div>	  
+		
+<div style="width: 45%; float: left">
+	<ul class="nav">
+	  <li><img src="../files/vb.gif" alt="" /> <a href="vb.htm">vBulletin</a></li>
+	  <li><img src="../files/phpbb.gif" alt="" /> <a href="phpbb.htm">phpBB2</a></li>
+	  <li><img src="../files/phpbb3.gif" alt="" /> <a href="phpbb3.htm">phpBB3</a></li>
+	  <li><img src="../files/mybb.gif" alt="" /> <a href="mybb.htm">myBB</a></li>
+  </ul>
+</div>
+	
+	
+<!-- ######### END TEXT ########################### -->
+
+
+      </div>
+<!-- End content -->
+    
+<!-- Begin footer -->
+      <div id="footer">      
+    
+	<div id="footleft">template by <a href="http://www.visiblesoul.net/">visiblesoul</a></div>
+	<div id="footcenter">
+		<a style="margin-right: 20px" href="../en/upgrade.htm"><img src="../files/flag-uk.gif" alt="" /></a>
+		<a style="margin-right: 20px"  class="langflag" href="../it/upgrade.htm"><img src="../files/flag-it.gif" alt="" /></a>
+		<a class="langflag" href="../fr/upgrade.htm"><img src="../files/flag-fr.gif" alt="" /></a>
+	</div>
+
+	<div id="footright">All content &copy;2005-2008 <a href="http://www.mkportal.it/">mkportal.it</a></div>           
+      </div>
+<!-- End footer -->    
+   
+    </div>  
+  
+  <div id="footimg"></div> 
+    
+</div> 
+
+</body>
+</html>

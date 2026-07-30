@@ -1,0 +1,2 @@
+// check permission to view forum
+if (!($vbulletin->userinfo['permissions']['forumpermissions'] & $vbulletin->bf_ugp_forumpermissions['canview']))

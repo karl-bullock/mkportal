@@ -1,0 +1,5 @@
+//added from MKportal
+define ( 'IN_MKP', 1 );
+require_once "../mkportal/include/MYBB/mybb_out.php";
+$contents = mkportal_board_out($contents);
+//end added
