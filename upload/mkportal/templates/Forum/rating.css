@@ -1,0 +1,61 @@
+
+.rating {
+	color: #757575;
+	font-size: 11px;		
+	font-family: tahoma;	
+	width: 85px;
+	height: 16px;
+}
+.mbratings {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 85px;
+	height: 16px;
+	position: relative;
+	background-image: url(images/rating.gif);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+.mbratings li {
+	text-indent: -90000px;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.mbratings li a {
+	display: block;
+	width: 17px;
+	height: 16px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 17;
+	position: absolute;
+	padding: 0px;
+}
+.mbratings li a:hover {
+	background-image: url(images/rating.gif);
+	background-position: left center;
+	z-index: 2;
+	left: 0px;
+}
+.mbratings a.rati1 { left: 0px; }
+.mbratings a.rati1:hover { width: 17px; }
+.mbratings a.rati2 { left: 17px; }
+.mbratings a.rati2:hover { width: 34px; }
+.mbratings a.rati3 { left: 34px; }
+.mbratings a.rati3:hover { width: 51px; }
+.mbratings a.rati4 { left: 51px; }	
+.mbratings a.rati4:hover { width: 68px; }
+.mbratings a.rati5 { left: 68px; }
+.mbratings a.rati5:hover { width: 85px; }
+.mbratings li.cur-rating {
+	background-image: url(images/rating.gif);
+	background-position: left bottom;
+	position: absolute;
+	height: 16px;
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}
+

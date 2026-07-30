@@ -1,0 +1,719 @@
+/*
++--------------------------------------------------------------------------
+|   Cascading Style Sheet for MKportal "default" Portal Template
+|   ========================================
+|   by Meo aka Luponero [Amedeo de longis]
+|      Don K. Colburn [visiblesoul.net]
+|   (c) 2004-2007 mkportal.it
+|   http://www.mkportal.it
+|   Email: luponero@mclink.it
++--------------------------------------------------------------------------
+|   > MKPortal
+|   > Written By Amedeo de longis
+|   > Date started: 9.2.2004
++--------------------------------------------------------------------------
+*/
+
+/*=============================
+M
+K  global styles
+P
+=============================*/
+body {
+	background-color: #efefef;
+	font-size: 10px; 
+	color: #666666; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	margin:0px; 
+	padding:0px; /* Opera 0 margin */	
+	text-align: center; /* center in IE */ 
+}
+
+/* portal wrapper */
+#mkwrapper {
+	text-align:left; /* left-align text in IE */	
+	margin: 0px auto 0px auto;
+}
+
+/* logostrip */
+#mklogostrip {
+	/* background-image: url(MKPORTALIMGDIR/sf_logo.jpg); */	
+	background-color: #8cb6e7;
+	text-align: left;
+}
+
+/* global font formatting */
+table,
+tr,
+td,
+.tdglobal {
+	font-size: 10px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+}
+
+/* main portal table */
+.tabmain {
+	margin:0px;
+	padding:0px;	
+}
+
+/* images */
+img { 		
+	border: 0px;
+	vertical-align: middle; /* Meo: Added in C1.2 */
+}
+
+/*=============================
+M
+K  LIGHT BACKGROUND
+P
+=============================*/
+.modulecell,
+.urlo2,
+.tabnews,
+.trattini,
+.tabmain,
+.tablemenu,
+.taburlo {
+	background-color: #ffffff;
+	color: #666666;
+}
+
+/*=============================
+M
+K  MEDIUM BACKGROUND
+P
+=============================*/
+.navigatore,
+.tdblock,
+.moduleborder {
+	background-color: #dfe6ef;
+	color: #496c9f;
+}
+
+/*=============================
+M
+K  DARK BACKGROUND
+P
+=============================*/
+.urlo,
+.sottotitolo {
+	/* background-image: url(MKPORTALIMGDIR/m_sf.gif); */
+	background-color:#8CB6E7;
+	color: #666666;
+}
+
+/*=============================
+M
+K  border and divider styles
+P
+=============================*/
+.tabmain,
+.tablemenu, /* block wrapper, chat button strip */
+.taburlo,
+.urlo2,
+.trattini,
+.trattini2,
+.trattini3 {
+	border: 1px solid #5c88c8;	
+}
+	
+.trattini { /*used only in tpl_main.php(deprecated), blog, ad_blocks.php*/
+	border-width: 1px 0 0 0;
+	border-top-style: dashed;
+}
+
+.trattini3 {/* used only in blog, quotes, urlobox, calendar*/
+	border-width: 0 0 1px 0;
+	border-bottom-style: dashed;
+}
+
+/* deprecated - used only in tpl_main.php */
+/* .vspacer
+{
+	background-image: url(MKPORTALIMGDIR/punto_vert.gif);
+	background-repeat: repeat-y;
+	background-color: transparent;	
+} */
+
+/*=============================
+M
+K  hyperlink styles
+P
+=============================*/
+/* global links */
+a:link, 
+a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none;	
+}
+
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: underline;
+}
+
+a:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none; 	
+}
+
+/* bold navbar, block, module links */
+a.uno:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px; 
+	color: #496c9f; 
+	font-weight: bold;
+	text-decoration: none
+}
+
+a.uno:visited {	
+	font-size: 10px; 
+	color: #496c9f; 
+	font-weight: bold;
+	text-decoration: none
+}
+
+
+a.uno:hover {
+	font-size: 10px; 
+	color: #496c9f; 
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* block text links */
+.tablemenu a:link, a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none;	
+}
+
+.tablemenu a:hover {
+	text-decoration: underline;
+}
+
+.tablemenu a:active { 
+	text-decoration: none; 	
+}
+
+/* global contrasting text and hyperlink color */
+.mktxtcontr,
+a.mktxtcontr:link, 
+a.mktxtcontr:visited {
+	color: #ff0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.mktxtcontr:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* contrasting text and hyperlink color 2 (admin) */
+.mktxtcontr2,
+a.mktxtcontr2:link, 
+a.mktxtcontr2:visited {
+	color: #0000ff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.mktxtcontr2:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/*=============================
+M
+K  form styles
+P
+=============================*/
+/* remove margin after closing "form" tag in MSIE */
+form {
+	margin: 0;
+	padding: 0
+}
+
+input,
+textarea,
+select,
+.bgselect, /* input fields */
+.mkbutton /* global submit buttons */
+{
+	background-color: #dfe6ef;		
+	/* border: 1px solid #4C77B6; */	
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 10px; 
+	color: #496c9f;
+	vertical-align: middle;
+}
+
+/* button border - needed for blocks to display correctly in forum-view */	
+.blsubmit,
+.mkbutton {
+	border: 2px #9cf outset;
+}
+
+.mkbutton { /* Global submit buttons */
+	padding: 3px;
+}
+
+.mkbbbutton { /* MKP BBcode editor buttons */
+	margin: 0;
+	padding: 0;
+}
+
+/* radio/checkbox buttons - remove background color and border in IE */	
+.mkradio {
+	background-color: transparent;
+	border: 0px;		
+}
+
+/* configure blog textarea */
+textarea.mkwrap1 {
+	overflow: auto;
+	/* width: 230px; */
+	width: 100%;
+}
+
+/* edit blog textarea */
+textarea.mkwrap2 {
+	overflow: auto;
+	width: 500px ;
+}
+
+/* block input */
+.mkblkinput {
+	background-color:#fff;
+ 	font-size: 9px;
+	border: 1px dashed #808080;
+	margin: 2px;
+}
+
+/*=============================
+M
+K  navstrip styles
+P
+=============================*/
+/* top navstrip */
+.navigatore {	
+	vertical-align: bottom;
+      color: #fff;
+	text-align: center;
+	font-family: Arial;
+	font-weight: 300;
+	font-size: 9px;
+}
+
+/*=============================
+M
+K  block styles
+P
+=============================*/
+/* used in functions.php (function main_page) */
+.blocks {
+	padding: 0px;
+}
+
+/* block header/footer corner images - portal skin only */
+.tdmenblock {
+	font-size: 0px;	
+	padding: 0px;  
+	margin: 0px; 
+	vertical-align: top;
+	background-color:#8CB6E7;
+}
+
+/* block td cell */
+.tdblock {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 2px;
+      background-color:#EBECEE;
+}
+
+/* block title bar */
+.sottotitolo {
+	vertical-align: middle;	
+	text-align: left;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;	
+	color: #ffffff;		 
+}
+
+/* horizontal spacer between blocks */
+.tdspacer {
+	line-height: 3px;
+}
+
+/*=============================
+M
+K  module global styles
+P
+=============================*/
+/* module table headings */
+.modulex {	
+	background-color: #f1f5f8;
+	height: 25px;
+}
+
+th.modulex {	 
+	color: #666666; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	background-color: #f1f5f8 !important;
+	background-image: none !important;
+	height: 25px;
+	/* font-weight: normal;*/
+	white-space: nowrap;
+}
+
+/* Reviews description text */
+.modulelite {
+	font-size: 8pt;
+	color:#a6bbcd;
+}
+
+/* center block padding (news, admin) */
+.contents {
+	padding: 10px;
+}
+
+/* module pagination links */
+.mkpagelink {
+	background: #FFFFFF;
+	border: 0px solid #EEEEEE;
+	padding: 6px 8px;
+	color: #bebebe;
+
+}
+.mkpagelink a {
+	border: 0px solid #EEEEEE;
+	padding: 6px 8px;
+	background: #F9F7F7 url(images/pagelink.png) left top repeat-x;
+	margin: 0px 1px;
+	color: #BEBEBE;
+	font-weight: bold;
+}
+.mkpagelink a:hover {
+	background: #518AC5 url(images/pagelink.png) left -40px repeat-x;
+	border: 0px solid #2666B9;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+.mkpagelinklast {
+	background-color: #dfe6ef;
+	border: 1px solid #072a66;
+	padding:1px 3px 1px 3px;
+	color: #000;
+	font-weight:normal;
+}
+
+.mkpagecurrent {
+	background-color: #ffc9a5;
+	border: 1px solid #072a66;
+	padding:1px 3px 1px 3px;
+	color: #000;
+	font-weight:normal;
+}
+
+/* admin cp titles with top border - used in frontend and backend */
+.titadmin {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 11px; 
+	color: #496c9f;
+	border-top: 1px dashed #5c88c8;
+}
+/*=============================
+M
+K  shoutbox module styles
+P
+=============================*/
+/* module table with border (shoutbox, news) */
+div.taburlo {	
+	width: 100%; /* center in IE */	
+}
+
+td.taburlo{
+	margin:5px;
+	padding:5px;
+	border: 0;
+}
+	
+/* shouter and date cell */
+.urlo {
+	line-height: 18px;
+	vertical-align: bottom;
+	text-align: left;
+	font-weight: bold;
+	font-size: 11px;
+      color: #FFFFFF;
+	padding: 4px;		 
+}
+
+/* shout cell */
+.urlo2 {
+	padding: 4px;	
+	/* border-bottom: 1px solid #5c88c8; */
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	text-align: left;
+	color: #496c9f;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* white shouter text */
+.urlocontrast {	
+	color: #ffffff;
+}
+
+/*=============================
+M
+K  news module styles
+P
+=============================*/
+/* news table with border */
+.tabnews {
+	border: 1px dashed #EBECEE;
+	margin:0px; 
+	padding:0px;
+	font-size: 10px;
+	color: #666666;	
+}
+
+/*=============================
+M
+K  font styles
+P
+=============================*/
+/* red error page text */
+.mkerror {	
+	font-size: 12pt;
+	color: #ff0000;
+	font-weight:bold;
+}
+
+/* MKPQuote quotation text */
+.mkquote { 		
+	color: #0000ff;	
+}
+
+/* MKPGallery module ecard, offline page */
+.ecardtitle,
+.offlinetxt {
+	font-size: 10pt; 
+	font-weight: bold;
+	text-align: center;
+}
+
+/*=============================
+M
+K  BBcode quote styles
+P
+=============================*/
+.mkquoteball {
+	font-size: 9px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #ffffff;	
+	padding: 0;	
+}
+
+.mkquotetext {
+	font-size: 10px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;	
+}
+table .mkquotetable{				
+	width: auto; /* IE */	
+	text-align: left;
+}
+
+/* Added in C1.2 */
+/* Table background highlight */
+.bghighlight1 {
+	background-color: #EAF8EB;
+}
+/* Table background highlight 2 */
+.bghighlight2 {
+	background-color: #EFCBCB;
+}
+/* mkportal footer copyright - Do not remove, modify or obscure the copyright text */
+.mkcopyright {
+	font-size: 10px;
+}
+.mkcopyright a {
+	text-decoration: none;
+}
+/* Calendar block current day highlighting */
+#mkcaltoday {
+	border:2px;
+	border-style:outset;
+	background-color: #ffff00;
+}
+
+/* Table Cell Alignment ltr/rtl */
+
+/* default is "left" */
+.mkalign1 {
+	text-align: left;
+}
+
+/* default is "right" */
+.mkalign2 {
+	text-align: right;
+}
+/* Банеры в fotter rusmkportal.ru */
+#banner a img {
+opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=30);
+}
+
+#banner a:hover img {
+opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100);
+}
+.navigator {
+	height: 16px;
+	line-height: 16px;
+}
+
+.navigator a:link, .navigator a:visited{
+	float: left;
+	text-align: center;
+	height: 18px;
+	line-height: 18px;
+	width: 80px;
+	background: #FFF url(images/navi_btn.png) top center no-repeat;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.navigator a:hover{
+	background: #3f9bdd url(images/navi_btn.png) bottom center no-repeat;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #fff;
+}
+
+.quotetop{
+    background: #E4EAF2 url(images/css_img_quote.gif) no-repeat right;
+    border: 1px dotted #000;
+    border-bottom: 0;
+    border-left: 4px solid #8394B2;
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
+    margin: 2px auto 0 auto;
+    padding: 3px;
+}
+
+.quotemain{
+    background: #FAFCFE;
+    border: 1px dotted #000;
+    border-left: 4px solid #8394B2;
+    border-top: 0;
+    color: #465584;
+    padding: 4px;
+    margin: 0 auto 0 auto;
+}
+
+.codemain,
+.sqlmain,
+.htmlmain{
+    background: #FAFCFE;
+    border: 1px dotted #000;
+    color: #465584;
+    font-family: Courier, Courier New, Verdana, Arial;
+    margin: 0 auto 0 auto;
+    padding: 2px;
+}
+
+.codetop,
+.sqltop,
+.htmltop{
+    background: #FDDBCC url(images/css_img_code.gif) no-repeat right;
+    color: #000;
+    font-weight: bold;
+    margin: 0 auto 0 auto;
+    padding: 3px;
+}
+		/* ==================== Рейтинг статьи */
+
+.rating {
+	color: #757575;
+	font-size: 11px;		/* ! */
+	font-family: tahoma;	/* ! */
+	width: 85px;
+	height: 16px;
+}
+.mbratings {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 85px;
+	height: 16px;
+	position: relative;
+	background-image: url(images/rating.gif);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+.mbratings li {
+	text-indent: -90000px;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.mbratings li a {
+	display: block;
+	width: 17px;
+	height: 16px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 17;
+	position: absolute;
+	padding: 0px;
+}
+.mbratings li a:hover {
+	background-image: url(images/rating.gif);
+	background-position: left center;
+	z-index: 2;
+	left: 0px;
+}
+.mbratings a.rati1 { left: 0px; }
+.mbratings a.rati1:hover { width: 17px; }
+.mbratings a.rati2 { left: 17px; }
+.mbratings a.rati2:hover { width: 34px; }
+.mbratings a.rati3 { left: 34px; }
+.mbratings a.rati3:hover { width: 51px; }
+.mbratings a.rati4 { left: 51px; }	
+.mbratings a.rati4:hover { width: 68px; }
+.mbratings a.rati5 { left: 68px; }
+.mbratings a.rati5:hover { width: 85px; }
+.mbratings li.cur-rating {
+	background-image: url(images/rating.gif);
+	background-position: left bottom;
+	position: absolute;
+	height: 16px;
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}

@@ -1,0 +1,6 @@
+//added from MKportal
+if($FORUM_VIEW == 1) {
+require_once $MK_PATH."mkportal/include/IPB/ipb_out.php";
+$this->ipsclass->skin['_wrapper'] = mkportal_board_out($this->ipsclass->skin['_wrapper']);
+}
+//end added

@@ -1,0 +1,1 @@
+$output = str_replace( '<!--DEBUG_STATS-->', $this->outputFormatClass->html_showDebugInfo(), $output );

@@ -1,0 +1,101 @@
+<?php
+/*
++--------------------------------------------------------------------------
+|   MkPortal
+|   ========================================
+|   by Meo aka Luponero <Amedeo de longis>
+|      Don K. Colburn <visiblesoul.net>
+|
+|   Copyright (c) 2003-2008 mkportal.it
+|   http://www.mkportal.it
+|   Email: luponero@mclink.it
+|
++---------------------------------------------------------------------------
+|
+|   > MKPortal
+|   > Written By Amedeo de longis
+|   > Date started: 9.2.2004
+|
++--------------------------------------------------------------------------
+*/
+if (!defined("IN_MKP")) {
+    	die ("Sorry !! You cannot access this file directly.");
+}
+@define('MK_SCRIPT', 'forum');
+
+function mkportal_board_out($output) {
+
+		global $ibforums, $DB, $std, $mkportals, $Skin, $MK_PATH, $MK_TEMPLATE, $mklib, $mklib_board, $MK_TIMEDIFF, $INFO;
+			
+		$MK_PATH = "../";
+		require $MK_PATH."mkportal/conf_mk.php";
+		if($FORUM_VIEW == 1) {	
+			$boarddir = $MK_PATH.$FORUM_PATH."/";
+			$mkportals->member = &$ibforums->member;
+			$mkportals->input = $ibforums->input;
+			$mkportals->base_url = $boarddir."index.php";
+			$mkportals->forum_url = $MK_PATH.$FORUM_PATH;
+			if(!$mkportals->member['msg_total']) {
+				$mkportals->member['msg_total'] = 0;
+			}
+			
+			if(!$mkportals->member['new_msg']) {
+				$mkportals->member['new_msg'] = 0;
+			}
+			$mkportals->member['user_new_privmsg'] = $mkportals->member['msg_total']."/".$mkportals->member['new_msg'];
+			if($ibforums->member['mgroup'] == 4) {
+				$mkportals->member['g_access_cp'] = 1;
+			}
+			$mkportals->member['theme'] = $mkportals->member['skin'];
+			$mkportals->member['timezone'] = ($std->get_time_offset() /3600);
+			if (substr($ibforums->skin['sname'], 0, 8) == "mkportal") {
+				$MK_TEMPLATE = "default";
+			}
+			if(!$mkportals->member['language']) {
+				$mkportals->member['language'] = $INFO['default_language'];
+			}
+			if(!$mkportals->member['language']) {
+				$mkportals->member['language'] = "en";
+			}
+			$DB->query("SELECT ldir, lname from ibf_languages");
+			while ( $r = $DB->fetch_row() ){
+  				if ($mkportals->member['language'] == $r['ldir'])  {
+  					$mkportals->member['mk_lang'] = $r['lname'];
+  				}
+			}
+			//start mkportal query count and load mkportal	
+			$DB->query_count = 0;
+			require $MK_PATH."mkportal/include/functions.php";
+			require_once $MK_PATH."mkportal/include/IPB13/ipb13_board_functions.php";
+			require_once "$mklib->template/tpl_main.php";
+			if($MK_OFFLINE && !$mkportals->member['g_access_cp'] && !$mklib->member['g_access_cpa']) {
+				$message = $mklib->lang['offline'];
+				$mklib->off_line_page($message);
+				exit;
+			}
+			
+			$mkpsubs = "#ipbwrapper{
+				margin: 0px auto 0px auto;
+				text-align: left;
+			}";
+			$output = preg_replace( "`(\#ipbwrapper(.*?\}))`is", $mkpsubs,$output);
+
+			$mkpsubs = "img{ 
+				border: 0;
+			}";
+			$output = preg_replace( "`(\img{(.*?\}))`is", $mkpsubs,$output);
+
+			$mkpsubs = ".divpad{
+				padding: 0px;
+			}";
+			$output = preg_replace( "`(\.divpad(.*?\}))`is", $mkpsubs,$output);
+			$output = str_replace("background: transparent;", " ", $output);
+			$output = preg_replace( "`(\<div id=\'logostrip\'>(.*?\</div>))`is", "",$output);
+			$output = $mklib->printpage_forum("$mklib->forumcs", "$mklib->forumcd", $ibforums->vars['board_name'], $output);
+        	}
+		return $output;
+        	
+}
+
+
+?>

@@ -1,0 +1,9 @@
+# Prevent Directory Listing
+Options -Indexes
+
+# Prevent Direct Access to Program Files
+<Files *>
+Order Deny,Allow
+Deny from all
+Allow from localhost
+</Files>

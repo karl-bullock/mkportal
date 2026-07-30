@@ -1,0 +1,181 @@
+/*
+Theme Name: SimplePie
+Theme URI: http://simplepie.org
+Description: A simple, yet beautiful theme inspired by several cleanly designed websites.
+Version: 1.4
+Author: Ryan Parman
+Author URI: http://skyzyx.com
+Updated: 21 June 2007
+*/
+
+
+/*********************************************
+GENERAL STYLES
+*********************************************/
+
+div#site {
+	width: 98%;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 12px
+}
+
+
+h2.image {
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+h3 {
+	margin:20px 0 0 0;
+	padding:0;
+	font-size:1.5em;
+}
+
+h4 {
+	font-size:12px;
+	margin: 2px 0;
+	padding: 0;
+}
+
+h4 img {
+	margin-right: 20px;
+}
+
+h5 {
+	margin:10px 0 0 0;
+	padding:0;
+	font-size:1em;
+	font-weight:bold;
+}
+
+code {
+	font-size:1em;
+	background-color:#f3f3ff;
+	color:#000;
+}
+
+div#site pre {
+	background-color:#f3f3ff;
+	color:#000080;
+	border:1px dotted #000080;
+	overflow:auto;
+	padding:3px 5px;
+}
+
+blockquote {
+	font-size:1em;
+	color:#666;
+	border-left:4px solid #666;
+	margin:10px 0 10px 30px;
+	padding:0 5px 0 10px;
+	background:#f3f3f3 url(background_blockquote.png) repeat top left;
+}
+
+.clearLeft {clear:left;}
+.clearRight {clear:right;}
+.clearBoth {clear:both;}
+.hide {display:none;}
+
+
+
+/*********************************************
+CONTENT STYLES
+*********************************************/
+div.chunk {
+	margin:0;
+	padding:0 0 3px 0;
+	border-bottom:1px solid #ccc;
+}
+
+div.topchunk {
+	margin:0 !important;
+}
+
+div.itemlist {
+	margin:0;
+	padding:0;
+}
+
+.footnote,
+.footnote a {
+	font-size:11px;
+	line-height:1.3em;
+	color:#aaa;
+	margin-top: 0
+}
+
+.footnote em {
+	background-color:transparent;
+	font-style:italic;
+}
+
+.footnote code {
+	background-color:transparent;
+	font:11px/14px monospace;
+	color:#aaa;
+}
+
+div.subscribe {
+	padding: 3px;
+	margin-bottom: 3px;
+	background-color:#f3f3f3;
+	font-size:11px;
+	text-align:center;
+}
+
+p.highlight {
+	background-color:#ffc;
+	font-size:11px;
+	text-align:center;
+}
+
+p.sample_feeds {
+	font-size:11px;
+	line-height:1.2em;
+}
+
+div.sp_errors {
+	background-color:#eee;
+	padding:5px;
+	text-align:center;
+	font-size:11px;
+}
+
+.noborder {
+	border:none !important;
+}
+
+img.favicon {
+	margin:0 4px -2px 0;
+	width:16px;
+	height:16px;
+}
+
+p.favicons a,
+p.favicons a:hover {
+	border:none;
+	background-color:transparent;	
+	display: inline
+}
+
+p.favicons img {
+	border:none;
+}
+
+/*********************************************
+SIFR STYLES
+*********************************************/
+.sIFR-active h3.header {
+	visibility:hidden;
+	line-height:1em;
+}
+
+div#site img {
+	margin: 3px;
+}
+
+div.channeltitle {
+ 	padding: 2px
+}

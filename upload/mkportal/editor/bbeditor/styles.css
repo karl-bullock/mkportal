@@ -1,0 +1,24 @@
+/*
+.editor {
+	font-family: verdana, arial, sans-serif;
+	font-size:13px;
+
+}
+*/
+.button {
+border: 1px solid #ccc;
+margin: 1px;
+padding: 2px;
+}
+
+.button:hover {
+border: 1px solid #465584;
+margin: 1px;
+padding: 2px;
+
+}
+
+/*.ed {
+width: 400px;
+height: 150px;
+}*/

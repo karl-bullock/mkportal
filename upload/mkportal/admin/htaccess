@@ -1,0 +1,19 @@
+# Prevent Directory Listing
+Options -Indexes
+
+# Prevent Direct Access to Program Files
+<Files ad_*.php>
+Order Deny,Allow
+Deny from all
+Allow from localhost
+</Files>
+
+# This is an example .htaccess directive for password protection of a directory on Apache servers.
+# Note that you must enter the path to the actual .htpasswd file on your server.
+# For more information see the Apache docs at http://httpd.apache.org/docs/2.2/howto/auth.html
+
+# Require Authorized User 
+#AuthName "Restricted Area" 
+#AuthType Basic 
+#AuthUserFile /full/path/to/.htpasswd
+#require valid-user

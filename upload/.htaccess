@@ -1,0 +1,39 @@
+RewriteEngine On
+RewriteBase /
+#index.php?ind=news&op=section_view&idev=1  [\W_](\d+)(.html|.htm)?$
+# вывод всех главных модулей
+ RewriteRule ^docs[\W_]([a-zA-Z0-9_-]+)[\W_]([a-zA-Z0-9_-]+).html$ index.php?ind=docs&op=page&folder=$1&contentsite=$2.html [NC]
+ RewriteRule ^quote[\W_]submit(\.html)?$ /index.php?ind=quote&op=submit_quote [L]
+ RewriteRule ^topsite[\W_]submit\.html /index.php?ind=topsite&op=submit_site [L]
+ RewriteRule ^(\w+)(\.html)?(/?)+$ /index.php?ind=$1 [NC]
+ RewriteRule ^(\w+)[\W_]section[\W_](\d+)(.html|.htm)?$ index.php?ind=$1&op=section_view&idev=$2[NC]
+ RewriteRule ^(\w+)[\W_]section[\W_]([0-9]*)-([0-9]*)\.html /index.php?ind=$1&op=section_view&idev=$2&order=&st=$3 [L]
+ RewriteRule ^(\w+)[\W_]submit(\.html)?$ /index.php?ind=$1&op=submit_file [L]
+ RewriteRule ^(\w+)[\W_]addfile(\.html)?$ /index.php?ind=$1&op=add_file [L]
+ RewriteRule ^(\w+)[\W_]edit[\W_](\d+)(.html|.htm)?$ /index.php?ind=$1&op=edit_file&iden=$2 [L]
+ RewriteRule ^(\w+)[\W_]editfile[\W_](\d+)(.html|.htm)?$ /index.php?ind=$1&op=update_file&iden=$2 [L]
+ RewriteRule ^(\w+)[\W_]delete[\W_](\d+)(.html|.htm)?$ /index.php?ind=$1&op=del_file&iden=$2 [L]
+ RewriteRule ^(\w+)[\W_]search\.html /index.php?ind=$1&op=search [L]
+ RewriteRule ^(\w+)[\W_]searchresult\.html /index.php?ind=$1&op=result_search [L]
+ RewriteRule ^(\w+)[\W_]add_comment-([0-9]*)\.html /index.php?ind=$1&op=add_comment&ide=$2 [L]
+ RewriteRule ^downloads[\W_]file[\W_](\d+)(.html|.htm)?$ /index.php?ind=downloads&op=entry_view&iden=$1 [L]
+ RewriteRule ^gallery[\W_]image[\W_](\d+)(.html|.htm)?$ /index.php?ind=gallery&op=foto_show&ida=$1 [L]
+ RewriteRule ^reviews[\W_]cat[\W_]([0-9]*)\.html /index.php?ind=reviews&op=cat&idc=$1 [L]
+ RewriteRule ^reviews[\W_]cat[\W_]([0-9]*)-([0-9]*)\.html /index.php?ind=reviews&op=cat&idc=$1&order=&st=$2 [L]
+ RewriteRule ^reviews[\W_]article[\W_](\d+)(.html|.htm)?$ /index.php?ind=reviews&op=entry_view&iden=$1 [L]
+ RewriteRule ^reviews[\W_]submitfile\.html /index.php?ind=reviews&op=submit_file1 [L]
+ RewriteRule ^news[\W_]page[\W_](\d+)(.html|.htm)?$ /index.php?ind=news&op=entry_view&iden=$1 [L]
+ RewriteRule ^news[\W_]best[\W_]1\.html /index.php?ind=news&op=lists&best=1[L]
+ RewriteRule ^news[\W_]popular[\W_]1\.html /index.php?ind=news&op=lists&popular=1[L]
+ RewriteRule ^news[\W_]list[\W_]1\.html /index.php?ind=news&op=lists&list=1[L]
+ RewriteRule ^poll[\W_]result[\W_]([0-9]*)\.html /index.php?ind=poll&op=poll_result&poll_id=$1 [L]
+ RewriteRule ^poll[\W_]show[\W_]([0-9]*)\.html /index.php?ind=poll&op=poll_show&poll_id=$1 [L]
+ RewriteRule ^poll[\W_]deletecom[\W_]([0-9]*)-([0-9]*)\.html /index.php?ind=poll&op=del_comment&idcomm=$1&ide=$2 [L]
+ RewriteRule ^poll[\W_]addcoment\.html /index.php?ind=poll&op=add_comment [L]
+ RewriteRule ^poll[\W_]save\.html /index.php?ind=poll&op=poll_save [L]
+ 
+
+
+
+
+                                                       

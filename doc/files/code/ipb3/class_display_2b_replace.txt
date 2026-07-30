@@ -1,0 +1,6 @@
+//added from MKportal
+if($FORUM_VIEW == 1) {
+require_once $MK_PATH."mkportal/include/IPB3/ipb3_out.php";
+$output= mkportal_board_out($output);
+}
+//end added
